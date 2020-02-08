@@ -1,0 +1,11 @@
+//users
+export const SET_USER = 'SET_USER';
+
+//passwords
+export const GET_PASSWORDS = 'GET_PASSWORDS';
+export const GET_PASSWORD = 'GET_PASSWORD';
+export const ADD_PASSWORD = 'ADD_PASSWORD';
+export const DELETE_PASSWORD = 'DELETE_PASSWORD';
+export const ONLOAD_PASSWORDS = 'ONLOAD_PASSWORDS';
+export const ONLOAD_PASSWORD = 'ONLOAD_PASSWORD';
+export const STATUS_ACTION_PASSWORD = 'STATUS_ACTION_PASSWORD';
