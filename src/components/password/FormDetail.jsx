@@ -42,9 +42,9 @@ export default function FormDetailPassword() {
 
     if (!form) {
         return (
-            <div class="text-center">
-                <div class="spinner-border" role="status">
-                    <span class="sr-only">Loading...</span>
+            <div className="text-center">
+                <div className="spinner-border" role="status">
+                    <span className="sr-only">Loading...</span>
                 </div>
             </div>
         )
@@ -67,6 +67,7 @@ export default function FormDetailPassword() {
                             className="form-control-plaintext" 
                             type="text" 
                             placeholder="url" 
+                            data-testid='form-input-url'
                             value={form.url}
                             readOnly
                         />
@@ -77,6 +78,7 @@ export default function FormDetailPassword() {
                             className="form-control-plaintext" 
                             type="text" 
                             placeholder="username" 
+                            data-testid='form-input-username'
                             value={form.username}
                             readOnly
                         />
@@ -88,6 +90,7 @@ export default function FormDetailPassword() {
                                 className="form-control-plaintext" 
                                 type={typeElPassword ? 'password' : 'text'} 
                                 placeholder="password" 
+                                data-testid='form-input-password'
                                 value={form.password}
                                 readOnly
                             />

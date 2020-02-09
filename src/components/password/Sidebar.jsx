@@ -12,6 +12,7 @@ export default function SidebarPassword() {
         >
             <Link 
                 to="/passwords/add" 
+                data-testid="add-password"
                 style={{
                     display: 'block',
                     textAlign: 'center',

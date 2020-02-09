@@ -9,7 +9,8 @@ export default function UpdatePassword() {
     const { id } = useParams()
     const [isRedirect, setIsredirect] = useState(false)
     const statusActionPassword = useSelector(state => state.password.status_action_password)
-    const password = useGetPassword(id)
+    useGetPassword(id)
+    const { password } = useSelector(state => state.password)
     const dispatch = useDispatch()
     const preUpdatePassword = (payload) => {
         dispatch(updatePassword(payload, id))
@@ -22,9 +23,9 @@ export default function UpdatePassword() {
     }
     if(!password){
         return (
-            <div class="text-center">
-                <div class="spinner-border" role="status">
-                    <span class="sr-only">Loading...</span>
+            <div className="text-center">
+                <div className="spinner-border" role="status">
+                    <span className="sr-only">Loading...</span>
                 </div>
             </div>
         )

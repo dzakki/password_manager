@@ -11,6 +11,7 @@ export default function ListPassword(props) {
                 cursor: 'pointer',
                 textDecoration: 'none'
             }}
+            data-testid="passwords-list"
         >
             <div className="card-body">
                 <h5 className="card-title">

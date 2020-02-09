@@ -9,7 +9,6 @@ export default function AddPassword() {
     const statusActionPassword = useSelector(state => state.password.status_action_password)
     const dispatch = useDispatch()
     const preAddPassword = (payload) => {
-        console.log(payload)
         dispatch(addPassword(payload))
         if(!statusActionPassword){
             setIsredirect(true)

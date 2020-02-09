@@ -11,7 +11,6 @@ import AddPassword from '../components/password/Add';
 export default function Password(props) {
     // const params = useParams()
     const {passwords, onload_passwords} = useSelector(state => state.password)
-    console.log(onload_passwords)
     useGetPasswords()
     return (
         <>
@@ -23,14 +22,14 @@ export default function Password(props) {
                             {
                                 onload_passwords
                                 ?   (
-                                        <div class="text-center col-12">
-                                            <div class="spinner-border" role="status">
-                                                <span class="sr-only">Loading...</span>
+                                        <div className="text-center col-12">
+                                            <div className="spinner-border" role="status">
+                                                <span className="sr-only">Loading...</span>
                                             </div>
                                         </div>
                                     )
                                 :   !passwords.length
-                                        ? ('there are\'t passwords ')
+                                        ? ('there are\'t passwords')
                                         : (
                                             passwords.map(password => {
                                                 return <div className="col-6 mb-3" key={password.id}>

@@ -44,6 +44,7 @@ export default function FormPassword(props) {
                 <>
                 <button 
                     className="btn btn-outline-dark btn-sm mr-1" 
+                    data-testid='form-btn-submit'
                     onClick={() => {
                         const validate = validateForm()
                         if (validate) {
@@ -65,9 +66,9 @@ export default function FormPassword(props) {
                 <>
                 <button 
                     className="btn btn-outline-dark btn-sm mr-1" 
+                    data-testid='form-btn-submit'
                     onClick={() => {
                         const validate = validateForm()
-                        console.log(validate)
                         if (validate) {
                             props.submitAddPassword(form)
                             setForm({
@@ -103,6 +104,7 @@ export default function FormPassword(props) {
                             className="form-control" 
                             type="text" 
                             placeholder="url" 
+                            data-testid='form-input-url'
                             value={form.url}
                             onChange={ (e) => handleForm('url', e.target.value) } 
                         />
@@ -113,6 +115,7 @@ export default function FormPassword(props) {
                             className="form-control" 
                             type="text" 
                             placeholder="username" 
+                            data-testid='form-input-username'
                             value={form.username}
                             onChange={ (e) => handleForm('username', e.target.value) } 
                         />
@@ -123,6 +126,7 @@ export default function FormPassword(props) {
                             className="form-control" 
                             type="password" 
                             placeholder="password" 
+                            data-testid='form-input-password'
                             value={form.password}
                             onChange={ (e) => handleForm('password', e.target.value) } 
                         />
