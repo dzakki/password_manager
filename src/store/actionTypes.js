@@ -4,6 +4,7 @@ export const SET_USER = 'SET_USER';
 //passwords
 export const GET_PASSWORDS = 'GET_PASSWORDS';
 export const GET_PASSWORD = 'GET_PASSWORD';
+export const SAVE_PASSWORDS_TEMP = 'SAVE_PASSWORDS_TEMP';
 export const ADD_PASSWORD = 'ADD_PASSWORD';
 export const DELETE_PASSWORD = 'DELETE_PASSWORD';
 export const ONLOAD_PASSWORDS = 'ONLOAD_PASSWORDS';

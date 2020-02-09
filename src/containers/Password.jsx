@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import useGetPasswords from '../hooks/useGetPasswords';
 import SidebarPassword from '../components/password/Sidebar';
 import ListPassword from '../components/password/List';
+import SearchPassword from '../components/password/Search';
 import FormDetailPassword from "../components/password/FormDetail";
 import UpdatePassword from '../components/password/Update';
 import AddPassword from '../components/password/Add';
@@ -44,6 +45,9 @@ export default function Password(props) {
                         <Switch>
                             <Route exact path="/passwords/add">
                                 <AddPassword />
+                            </Route>
+                            <Route exact path="/passwords/search">
+                                <SearchPassword />
                             </Route>
                             <Route exact path="/passwords/update/:id">
                                 <UpdatePassword />           

@@ -12,31 +12,37 @@ const db  = firebase.firestore()
 
 let dbPassword;
 
-export const getPasswords = () => (dispatch, state) => {
+export const getPasswords = (search) => (dispatch, state) => {
     dispatch({
         type: ONLOAD_PASSWORDS
     })
 
-    dbPassword = db.collection("passwords").where("userUid", "==", state().user.uid)
-                    .onSnapshot(function(querySnapshot) {
-                        const data = []
-                        querySnapshot.forEach((doc) => {
-                            data.push({
-                                id: doc.id,
-                                ...doc.data()
-                            })
-                        });
-                        dispatch({
-                            type: GET_PASSWORDS,
-                            data
-                        })    
-                    }, function (err) {  
-                        console.log(err)
-                        dispatch({
-                            type: 'ERRORS',
-                            data: 'load passwords failed: internal server errors'
-                        })
-                    });
+    if (!search) {
+        dbPassword = db.collection("passwords").where("userUid", "==", state().user.uid)   
+    }else{
+        dbPassword = db.collection("passwords")
+        .where("userUid", "==", state().user.uid) 
+        .where("url", "==", search)
+    }
+    dbPassword.onSnapshot(function(querySnapshot) {
+            const data = []
+            querySnapshot.forEach((doc) => {
+                data.push({
+                    id: doc.id,
+                    ...doc.data()
+                })
+            });
+            dispatch({
+                type: GET_PASSWORDS,
+                data
+            })    
+        }, function (err) {  
+            console.log(err)
+            dispatch({
+                type: 'ERRORS',
+                data: 'load passwords failed: internal server errors'
+            })
+        });
 }
 
 export const getPassword = (id) => dispatch => {

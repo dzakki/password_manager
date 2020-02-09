@@ -26,6 +26,23 @@ export default function SidebarPassword() {
             >
                 Add
             </Link>
+            <Link 
+                to="/passwords/search"
+                data-testid="add-password"
+                className="mt-3"
+                style={{
+                    display: 'block',
+                    textAlign: 'center',
+                    padding: '16px',
+                    textDecoration: 'none',
+                    transition: 'all 0.3s ease',
+                    color: 'white',
+                    fontSize: '15px',
+                    backgroundColor: '#55ACEE'
+                }}
+            >
+                Search
+            </Link>
         </div>
     )
 }
